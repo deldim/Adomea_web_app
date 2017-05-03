@@ -1,0 +1,179 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Client :  db
+-- Généré le :  Ven 03 Février 2017 à 17:29
+-- Version du serveur :  5.7.17
+-- Version de PHP :  7.0.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `UZENGO_DB`
+--
+-- --------------------------------------------------------
+--
+-- Creation de la base de donnees
+--
+
+CREATE DATABASE UZENGO_DB;
+USE UZENGO_DB;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_authentication`
+--
+
+CREATE TABLE `u_authentication` (
+  `a_mail` varchar(320) NOT NULL,
+  `a_privilege` varchar(20) NOT NULL,
+  `a_hash` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_business_contractor`
+--
+
+CREATE TABLE `u_business_contractor` (
+  `b_mail` varchar(320) NOT NULL,
+  `b_name` varchar(255) NOT NULL,
+  `b_phone_number` varchar(20) NOT NULL,
+  `b_address` varchar(255) NOT NULL,
+  `b_vat_number` int(11) NOT NULL,
+  `b_referent_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_coupon`
+--
+
+CREATE TABLE `u_coupon` (
+  `c_hash` varchar(64) NOT NULL,
+  `c_id_coupon` int(11) NOT NULL,
+  `c_id_order_business` int(11) NOT NULL,
+  `c_date_of_validity` timestamp NULL DEFAULT NULL,
+  `c_discount` int(11) NOT NULL,
+  `c_status` varchar(10) NOT NULL,
+  `c_duration` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_icon`
+--
+
+CREATE TABLE `u_icon` (
+  `i_mail` varchar(320) NOT NULL,
+  `i_url` varchar(2083) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_order_b`
+--
+
+CREATE TABLE `u_order_b` (
+  `o_ob_id` int(11) NOT NULL,
+  `o_purchase_date` timestamp NULL DEFAULT NULL,
+  `o_date_of_validity` timestamp NULL DEFAULT NULL,
+  `o_quantity_of_coupon` int(11) NOT NULL,
+  `o_global_expiration_date` timestamp NULL DEFAULT NULL,
+  `o_ob_status` varchar(20) NOT NULL,
+  `o_ob_status_payment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_order_u`
+--
+
+CREATE TABLE `u_order_u` (
+  `o_ou_id` int(11) NOT NULL,
+  `o_purchase_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `o_date_of_validity` timestamp NULL DEFAULT NULL,
+  `o_duration` timestamp NULL DEFAULT NULL,
+  `o_expiration_date` timestamp NULL DEFAULT NULL,
+  `o_ou_status` varchar(10) NOT NULL,
+  `o_ou_status_payment` varchar(10) NOT NULL,
+  `o_ou_coupon_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_user`
+--
+
+CREATE TABLE `u_user` (
+  `u_last_name` varchar(255) NOT NULL,
+  `u_first_name` varchar(255) NOT NULL,
+  `u_address` varchar(255) NOT NULL,
+  `u_mail` varchar(320) NOT NULL,
+  `u_phone_number` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_worker`
+--
+
+CREATE TABLE `u_worker` (
+  `w_mail` varchar(320) NOT NULL,
+  `w_company_id` int(11) NOT NULL,
+  `w_address` varchar(255) NOT NULL,
+  `w_first_name` varchar(255) NOT NULL,
+  `w_last_name` varchar(255) NOT NULL,
+  `w_phone_number` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `u_worker_company`
+--
+
+CREATE TABLE `u_worker_company` (
+  `e_mail` varchar(320) NOT NULL,
+  `e_company_id` int(11) NOT NULL,
+  `e_company_name` varchar(255) NOT NULL,
+  `e_company_phone_number` varchar(20) NOT NULL,
+  `e_address` varchar(255) NOT NULL,
+  `e_vat_number` int(11) NOT NULL,
+  `e_referent_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `u_coupon`
+--
+ALTER TABLE `u_coupon`
+  ADD UNIQUE KEY `index_order_coupon` (`c_id_coupon`);
+
+--
+-- Index pour la table `u_order_u`
+--
+ALTER TABLE `u_order_u`
+  ADD PRIMARY KEY (`o_ou_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

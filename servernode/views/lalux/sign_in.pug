@@ -1,0 +1,76 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='../stylesheets/style.css')
+
+
+
+
+block content
+        header.header-main
+            nav.site-nav.reversed
+                .container
+                    a.site-logo(href='/')
+                        img(src='../images/lalux.png',style='margin-top:11px', alt='logo-uzengo')
+                    a.nav-toggle.nav-toggle--dark(href='#', aria-hidden='false') Menu
+                    nav.nav.nav--main.nav-collapse
+                        ul
+                            li
+                            li
+                            li
+                                span.link_to_another_page
+                                    a.nav__link(href='/faqs') Aide
+                            li
+                            li
+                                span.link_to_another_page
+        .user-login-container
+            .user-login-errors
+            .container.user-login
+                h1.user-login__heading Connexion
+                form#new_user.form-large(action='/sign_in_lalux', accept-charset='UTF-8', method='post')
+                    label.user-login__label(for='user_email') Adresse Email
+                    input#user_email.user-login__input.user-login__input--email(placeholder='Email', required='required', type='email', value='', name='email')
+                    label.user-login__label(for='user_password') Mot de passe
+                    input#user_password.user-login__input.user-login__input--password(placeholder='Mot de passe', required='required', type='password', name='password')
+                    input(style='background:#0c8273').user-login__action(type='submit', name='commit', value='Se connecter')
+                    a.user-login__forgot-password(href='/users/password/new') Mot de passe Oublié?
+                    if unfound_user
+                        ul
+                            for error in unfound_user
+                                li(style='color:red')!= error.msg
+                    if errors
+                        ul
+                            for error in errors
+                                li(style='color:red')!= error.msg
+        style.
+            body,
+            .site-nav {
+                background: #f2f2f2;
+            }
+        footer(style='background:#0c8273').new-footer.footer.full-width.small-text-center
+            section.footer-section
+                .text-s.row
+                    .footer__copyright.large-6.large-centered.columns
+                        | Tous droits réservés.  
+                        a.link--positive(href='/mentions-legales') Mentions légales
+                        |  | ©
+                        |                         2017
+                        |                         Uzengo
+        script.
+            var nav = responsiveNav('.nav-collapse', { // Selector
+                animate: true, // Boolean: Use CSS3 transitions, true or false
+                transition: 284, // Integer: Speed of the transition, in milliseconds
+                label: 'Menu', // String: Label for the navigation toggle
+                insert: 'before', // String: Insert the toggle before or after the navigation
+                customToggle: '.nav-toggle'
+            });

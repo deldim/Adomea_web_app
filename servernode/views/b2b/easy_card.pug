@@ -1,0 +1,95 @@
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='../stylesheets/style___.css')
+    body.bids-show
+        .bid-process-container
+            header.row
+                nav.site-nav.large-12.columns
+                    .container
+                        a.site-logo(href='/')
+                            img(style='margin-top:-30px' ,src='../images/logo.png', alt='logo-uzengo')
+            .bids-secondary-row-container.bids-row
+                .row
+                    ul.large-12.medium-12.small-12.columns.bids-step-process
+                        li.bids-step-icon.bid-step-icon-date-frequency.bids-step-icon--current
+                            | L&rsquo;efficacit&eacute; au travail passe n&eacute;cessairement par une bonne gestion de la vie priv&eacute;e
+            section
+                div.simple_form.track_cleaner-step-two
+                    .row
+                        div(style='width: 100%')
+                            .bid_process_wrapper
+                                .bid_process_question.bid_process_duration
+                                fieldset.bid-process-form
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .string.required.easy_card
+                                                .controls
+                                                    img(style='margin-left: 29%;',src='../images/easy_card.png', alt='logo-uzengo')
+                                                .controls
+                                                |
+                                                label.string.required
+                                                    | Aujourd&rsquo;hui, la prise en compte active du bien-&ecirc;tre des salari&eacute;s au travail est une priorit&eacute;. Ind&eacute;pendamment du cadre de travail, la vie priv&eacute;e a une importance consid&eacute;rable sur l&rsquo;&eacute;motion ressentie sur le lieu de travail.
+                                                    br
+                                                    |  Uzengo propose une solution innovante afin de compl&eacute;ter les avantages propos&eacute;s par les entreprises &agrave; leurs salari&eacute;s, avec la premi&egrave;re carte sur le march&eacute;&nbsp;:
+                                                    b  EASYCARD
+                                                    |
+                                                    em  advantage services
+                                                    |  d&eacute;di&eacute;e exclusivement au service &agrave; domicile.
+                                                    br
+                                                    |  Pour obtenir plus d&rsquo;informations au sujet de ce service, nous vous invitons &agrave; compl&eacute;ter le formulaire de contact ci-dessous
+                                                    br
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .js-email-suggestion
+                                        .large-6.medium-6.small-6.columns
+                                fieldset.bid-process-form.contact_form.contact_form_easy_card
+                                    h2.bid-process-form__heading.bid-process-form__heading--border  Formulaire de contact
+                                    #sticker.row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.string.required.bid_user_firstname
+                                                label.string.required.control-label Nom de la soci&eacute;t&eacute;*
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+                                        .form-group.string.required.bid_user_mobile
+                                            label.string.required.control-label Nom complet de la personne &agrave; contacter*
+                                            .controls
+                                                input.string.required.form-control(required='required', type='text', name='firstname')
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.email.required.bid_user_email
+                                                label.required.control-label Adresse de la soci&eacute;t&eacute;*
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+                                            .js-email-suggestion
+                                        .form-group.email.required.bid_user_email
+                                                label.string.required.control-label Email*
+                                                    .controls
+                                                        input.string.required.form-control(required='required', type='text', name='firstname')
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.password.required.bid_user_password
+                                                label.required.control-label URL du site internet (s&rsquo;il existe)
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+                                        .form-group.string.required.bid_user_mobile
+                                                label.required.control-label T&eacute;l&eacute;phone*
+                                                    .controls
+                                                        input.string.required.form-control(required='required', type='text', name='firstname')
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.password.required.bid_user_password
+                                                label.required.control-label Message
+                                                .controls
+                                            textarea.message.form-control
+                                            |
+                                            input.bid-process__button.bid-process__button--positive.send(type='submit', name='commit', value='Envoyer', disable_with='Recherche, veuillez patienter ...')

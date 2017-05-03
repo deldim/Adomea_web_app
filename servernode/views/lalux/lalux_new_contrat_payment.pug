@@ -1,0 +1,89 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(href='../stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='../stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='../stylesheets/style__.css', rel='stylesheet')
+        link(href='../stylesheets/style_lalux.css', rel='stylesheet')
+    body
+        #wrapper
+            nav.navbar-default.navbar-static-side(role='navigation')
+                .sidebar-collapse
+                    ul#side-menu.nav
+                        li
+                            .user-section
+                                .user-section-inner
+                                .user-info
+                                    div
+                                        br
+                                    .user-text-online
+                                        br
+                        li
+                            a(href='/lalux')
+                                i.fa.fa-dashboard.fa-fw
+                                |  Dashboard
+                        li
+                            a(href='/lalux/lalux_clients')
+                                i.fa.fa-user.fa-fw
+                                |  Clients
+                        li
+                            a(href='/lalux/lalux_contrats')
+                                i.fa.fa-bullseye.fa-fw
+                                |  Contrats
+                        li.selected
+                            a(href='/lalux/lalux_new_contrat')
+                                i.fa.fa-edit.fa-fw
+                                |  Nouveau contrat
+                        li
+                            a(href='/log_out')
+                                i.fa.fa-power-off.fa-fw
+                                |  Se d&eacute;connecter
+            #page-wrapper
+                .panel.panel-default
+                div
+                .col-lg-6
+                div
+                .panel-body
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Virement bancaire
+                        #collapseOne.panel-collapse.collapse.in
+                            .panel-body.virement
+                                | Vous pouvez r&eacute;gler vos factures en effectuant un virement bancaire vers le compte suivant
+                                br
+                                |  XXXX-XXXXXXXXX-XX
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') Carte bancaire
+                        #collapseTwo.panel-collapse.collapse.in
+                            form.newcontrat(action ='/lalux_new_contrat_payment' role='form' method='post')
+                                .form-group.owner_name
+                                    label Nom du titulaire de la carte
+                                    |
+                                    input.form-control(placeholder='Enter text')
+                                .form-group.owner_last
+                                    label Pr&eacute;nom du titulaire de la carte
+                                    |
+                                    input.form-control(placeholder='Enter text')
+                                .form-group.numer_card
+                                    label Num&eacute;ro de la carte
+                                    |
+                                    input.form-control(placeholder='Enter text')
+                                .form-group.owner_name
+                                    label Date d&apos;expiration
+                                    |
+                                    input.form-control(placeholder='Enter text')
+                                .form-group.owner_last
+                                    label Code cryptogramme
+                                    |
+                                    input.form-control(placeholder='Enter text')
+                                    |
+                                    input.button.payer.purchase(value='Régler votre facture',type='submit')
+
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')

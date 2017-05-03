@@ -1,0 +1,74 @@
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(href='../stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='../stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='../stylesheets/style__.css', rel='stylesheet')
+        link(href='../stylesheets/style_lalux.css', rel='stylesheet')
+    body
+        #wrapper
+            nav.navbar-default.navbar-static-side(role='navigation')
+                .sidebar-collapse
+                    ul#side-menu.nav
+                        li
+                            .user-section
+                                .user-section-inner
+                                .user-info
+                                    div
+                                        br
+                                    .user-text-online
+                                        br
+                        li
+                            a(href='/lalux')
+                                i.fa.fa-dashboard.fa-fw
+                                |  Dashboard
+                        li
+                            a(href='/lalux/lalux_clients')
+                                i.fa.fa-user.fa-fw
+                                |  Clients
+                        li
+                            a(href='/lalux/lalux_contrats')
+                                i.fa.fa-bullseye.fa-fw
+                                |  Contrats
+                        li.selected
+                            a(href='/lalux/lalux_new_contrat')
+                                i.fa.fa-edit.fa-fw
+                                |  Nouveau contrat
+                        li
+                            a(href='/log_out')
+                                i.fa.fa-power-off.fa-fw
+                                |  Se d&eacute;connecter
+            #page-wrapper
+                .panel.panel-default
+                div
+                .col-lg-6
+                    .center
+                        form.newcontrat(action ='/lalux_new_contrat' role='form' method='post')
+                            .form-group
+                                label.control-label Type du contrat
+                                |
+                                input(name='contract_type',required='required', type='text').form-control
+                            .form-group
+                                label.control-label Promotion
+                                |
+                                input(name='discount',required='required', type='text').form-control
+                            .form-group
+                                label.control-label Volume horaire
+                                |
+                                input(name='duration',required='required', type='text').form-control
+                            .form-group
+                                label.control-label Date de validit&eacute;
+                                |
+                                input(name='validity_date', required='required', type='text').form-control
+                            .form-group
+                                label.control-label Nombre de codes
+                                |
+                                input(name='code_number',required='required', type='text').form-control
+                            |
+                            input.button.payer.purchase(value='Suivant',type='submit')
+
+    div
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')

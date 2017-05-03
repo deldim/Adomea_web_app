@@ -1,0 +1,79 @@
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='foundation/foundation.min.js')
+        script(src='responsive-nav/responsive-nav.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='stylesheets/style___.css')
+    body.bids-show
+        .bid-process-container
+            header.row
+                nav.site-nav.large-12.columns
+                    .container
+                        a.site-logo(href='/')
+                            img(src='../../images/logo.png', alt='logo-uzengo')
+            .bids-secondary-row-container.bids-row
+                .row
+                    ul.large-12.medium-12.small-12.columns.bids-step-process
+                        li.bids-step-icon.bid-step-icon-date-frequency.bids-step-icon--current  Offrez un service sur mesure &agrave; vos clients ou vos salari&eacute;s
+            section
+
+                div.simple_form.track_cleaner-step-two
+                    .row
+                        div(style='width: 100%')
+                            .bid_process_wrapper
+                                .bid_process_question.bid_process_duration
+                                fieldset.bid-process-form
+                                    h2.bid-process-form__heading.bid-process-form__heading--border  Nos offres
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.string.required.bid_user_firstname
+                                                .controls
+                                                    img(src='../../images/easy_card.png', alt='logo-uzengo')
+                                                .controls
+                                                |
+                                                label.string
+                                                    | Easycard est un service mis &agrave; disposition des entreprises, leur permettant de participer activement et concr&egrave;tement au bien &ecirc;tre de leurs employ&eacute;s.
+                                                    br
+                                                    |  Nous savons qu&rsquo;il est important pour les salari&eacute;s de concilier vie priv&eacute;e et vie professionnelle, c&rsquo;est pour cette raison que nous avons cr&eacute;&eacute;e Easycard.
+                                                    br
+                                                    |  V&eacute;ritable levier d&rsquo;action RH, ce service valorise et optimise votre politique RH ainsi que l&rsquo;image de votre entreprise.
+                                                |
+                                                form(method='get', action='/b2b/easy_card')
+                                                    input.bid-process__button.bid-process__button--positive.send(style='margin-top:100px',type='submit', name='commit', value='EN SAVOIR PLUS')
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.string.required.bid_user_firstname
+                                                .controls
+                                                    img(src='../../images/uzengo_pro.png', alt='logo-uzengo-pro')
+                                                .controls
+                                                |
+                                                label.string
+                                                    | Vous &ecirc;tes une soci&eacute;t&eacute; d&rsquo;assurance, une agence immobili&egrave;re&nbsp;; un syndic&mldr;
+                                                    br
+                                                    |  Apr&egrave;s un incident, un sinistre&nbsp;? Vous devez r&eacute;pondre aux besoins contractuels de vos clients.
+                                                    br
+                                                    |  Proposez-leur RAPIDEMENT une solution de prise en charge via des professionnels agr&eacute;es UZENGO. Cette plateforme vous permettra aussi d&rsquo;avoir un retour des travaux effectu&eacute;s gr&acirc;ce &agrave; un reporting en temps r&eacute;el.
+                                                    br
+                                                    |
+                                                    b Sans &ecirc;tre exhaustif
+                                                    | , l&rsquo;utilisation de la plateforme UZENGO permet une r&eacute;ponse pour la plupart des cas usuels suivants&nbsp;:
+                                                    br
+                                                    |  Nettoyage apr&egrave;s sinistres, d&eacute;g&acirc;t des eaux, aide &agrave; domicile apr&egrave;s incapacit&eacute; de mobilit&eacute;&mldr;etc
+                                                    |
+                                                    form(method='get', action='b2b/uzengo_pro')
+                                                        input.bid-process__button.bid-process__button--positive.send(style='margin-top:100px',type='submit', name='commit', value='EN SAVOIR PLUS')
+
+
+
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .js-email-suggestion
+                                        .large-6.medium-6.small-6.columns
+
+

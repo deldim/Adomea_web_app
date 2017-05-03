@@ -1,0 +1,59 @@
+extends ../heads/head
+
+block content
+    body.index-index.splash.splash-video.full-width
+        header.header-main.header-main--light
+            nav.site-nav.reversed
+                .container
+                    a.site-logo(href='/')
+                        img(alt='logo-uzengo', src='../images/logo.png')
+                    |
+                    a.nav-toggle.nav-toggle--dark(aria-hidden='true', href='', style='fill:;') Menu
+                    nav.nav.nav--main.nav-collapse
+                        ul
+                            li
+                            li
+                                span.link_to_another_page
+                                    a.nav__link(href='faqs') Aide
+                            li
+                            li
+                                a.nav__link.sign-in(href='sign_in') Se connecter
+                            li
+                                span.link_to_another_page
+                                    a.nav__link(href='uzengo_pro') Uzengo Pro
+                            li
+                                .nav__link.nav__trust-item
+        section#main-teaser.teaser
+            .hv-video-container
+                img(alt='logo-uzengo', src='../images/colored-chairs.jpg')
+            .main-teaser-content
+                .teaser-content
+                    h1 D&eacute;sol&eacute;,nous ne sommes pas encore disponibles dans votre localit&eacute;
+                    p(style='color:white;')
+                        | Toutefois, nous sommes toujours en expansion. Veuillez ainsi r&eacute;it&eacute;rer ult&eacute;rieurement
+                    .signup.inline-submit
+                        form#new_bid.new_bid(accept-charset='UTF-8', action='/bids', data-remote='true', method='post', name='new_bid')
+                            input(name='utf8', type='hidden', value='✓')
+                            .row
+                                input#bid_postcode.postcode.tool-tipped.postcode-validations(autocomplete='off', name='postcode', placeholder='Votre code postal', required='required', type='text')
+                                |
+                                input.btn-primary.signup__button(name='commit', type='submit', value='Chercher')
+        footer.new-footer.footer.full-width.small-text-center
+            section.footer-section
+                .text-s.row
+                    .footer__copyright.large-6.large-centered.columns
+                        | Tous droits r&eacute;serv&eacute;s. &nbsp;
+                        a.link--positive(href='/mentions-legales') Mentions l&eacute;gales
+                        | &nbsp;| &copy; 2017 &nbsp; Uzengo
+        script.
+            var nav = responsiveNav('.nav-collapse', { // Selector
+                animate: true, // Boolean: Use CSS3 transitions, true or false
+                transition: 284, // Integer: Speed of the transition, in milliseconds
+                label: 'Menu', // String: Label for the navigation toggle
+                insert: 'before', // String: Insert the toggle before or after the navigation
+                customToggle: '.nav-toggle'
+            });
+    //
+       Created by deldim on 06/03/2017.
+
+

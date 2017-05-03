@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(href='../stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='../stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='../stylesheets/style__.css', rel='stylesheet')
+        link(href='../stylesheets/style_lalux.css', rel='stylesheet')
+
+    #wrapper
+            nav.navbar-default.navbar-static-side(role='navigation')
+                .sidebar-collapse
+                    ul#side-menu.nav
+                        li
+                            .user-section
+                                .user-section-inner
+                                .user-info
+                                    div
+                                        br
+                                    .user-text-online
+                                        br
+                        li
+                            a(href='/lalux')
+                                i.fa.fa-dashboard.fa-fw
+                                |  Dashboard
+                        li.selected
+                            a(href='/lalux/lalux_clients')
+                                i.fa.fa-user.fa-fw
+                                |  Clients
+                        li
+                            a(href='/lalux/lalux_contrats')
+                                i.fa.fa-bullseye.fa-fw
+                                |  Contrats
+                        li
+                            a(href='/lalux/lalux_new_contrat')
+                                i.fa.fa-edit.fa-fw
+                                |  Nouveau contrat
+                        li
+                            a(href='/log_out')
+                                i.fa.fa-power-off.fa-fw
+                                |  Se d&eacute;connecter
+            #page-wrapper
+                .panel.panel-default
+                .input-group.stylish-input-group.search_bar
+                    input.form-control(type='text', placeholder='Search')
+                    |
+                    span.input-group-addon
+                        button(type='submit')
+                            span.fa.fa-search.fa-fw
+                table.table.bookings
+                    thead
+                        tr
+                            th Pr&eacute;nom
+                            th Nom
+                            th Adresse
+                            th Email
+                            th Date d&eacute;but
+                            th Date expiration
+                    tbody
+                        each itemlist in list
+                            tr
+                            each item in itemlist
+                                td #{item}
+
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')

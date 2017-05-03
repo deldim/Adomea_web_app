@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(href='../stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='../stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='../stylesheets/style__.css', rel='stylesheet')
+        link(href='../stylesheets/style_dashboard.css', rel='stylesheet')
+    body
+        #wrapper
+            nav.navbar-default.navbar-static-side(role='navigation')
+                .sidebar-collapse
+                    ul#side-menu.nav
+                        li
+                            .user-section
+                                .user-section-inner
+                                    img(src='../images/logo-white.png',href='/', alt='')
+                                .user-info
+                                    div #{email}
+                                    .user-text-online
+                                        br
+                        li.sidebar-search
+                        li
+                            a(href='/user_dashboard/user_dashboard')
+                                i.fa.fa-dashboard.fa-fw
+                                |  Dashboard
+                        li
+                            a(href='')
+                                i.fa.fa-user.fa-fw
+                                |  Mon compte
+                        li.selected
+                            a(href='/user_dashboard/user_dash_bookings')
+                                i.fa.fa-bullseye.fa-fw
+                                |  R&eacute;servations
+                        li
+                            a(href='/user_dashboard/user_dash_invoices')
+                                i.fa.fa-edit.fa-fw
+                                |  Factures
+                        li
+                            a(href='/log_out')
+                                i.fa.fa-power-off.fa-fw
+                                |  Se d&eacute;connecter
+            #page-wrapper
+                .row.info_alert
+                    table.table.bookings.reservations
+                        thead
+                            tr
+                                th Service
+                                th Date de d&eacute;but
+                                th Dur&eacute;e
+                                th Prix
+                        tbody
+                            each itemlist in list
+                                tr
+                                each item in itemlist
+                                    td #{item}
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')

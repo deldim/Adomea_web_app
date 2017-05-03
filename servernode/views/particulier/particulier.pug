@@ -1,0 +1,58 @@
+extends ../heads/head
+
+block content
+
+    body.index-index.splash.splash-video.full-width
+        header.header-main.header-main--light
+            nav.site-nav.reversed
+                .container
+                    a.site-logo(href='/')
+                        img(style='margin-top:-30px',src='../images/logo.png', alt='logo-uzengo')
+        section.teaser
+            div
+                h3
+                    | Uzengo vous met en relation avec des prestataires de services qualifi&eacute;s, r&eacute;pondant aux exigences de notre
+                    br
+                    a(href='/charte_qualite' style='color:#ffb400') Charte Qualit&eacute;
+        section#howitwork-teaser.teaser.bg-primary
+            div
+                h3 R&eacute;servez votre prestation de service &agrave; domicile en quelques clics
+                .signup.inline-submit
+                    form#new_bid2.new_bid(action='http://localhost/bids', accept-charset='UTF-8', data-remote='true', method='post')
+                        .row
+                            input#bid_postcode2.postcode(required='required', placeholder='Votre code postal', type='text', name='postcode')
+                            |
+                            input.btn-primary.signup__button(type='submit', name='commit', value='Chercher')
+        section#trustandsecurity-teaser.teaser
+            div
+                h3 La qualit&eacute; comme seul mot d&apos;ordre
+                .service
+                    i.icon-trust-connect
+                    p Connectez-vous
+                .service
+                    i.icon-trust-online
+                    p R&eacute;server votre cr&eacute;neau
+                .service
+                    i.icon-trust-zuver
+                    p Des prestataires &nbsp;qualifi&eacute;s et exp&eacute;riment&eacute;s
+                .service
+                    i.icon-trust-bezah
+                    p Paiement en ligne s&eacute;curis&eacute;
+                .service
+                    i.icon-trust-garantie
+                    p Satisfaction garantie
+        footer.new-footer.footer.full-width.small-text-center
+            section.footer-section
+                .text-s.row
+                    .footer__copyright.large-6.large-centered.columns
+                        | Tous droits r&eacute;serv&eacute;s. &nbsp;
+                        a.link--positive(href='http://localhost/lalux/sign_in') Acc&eacute;s Lalux
+                        | &nbsp;| &copy; 2017 &nbsp; Uzengo
+        script.
+            var nav = responsiveNav('.nav-collapse', { // Selector
+                animate: true, // Boolean: Use CSS3 transitions, true or false
+                transition: 284, // Integer: Speed of the transition, in milliseconds
+                label: 'Menu', // String: Label for the navigation toggle
+                insert: 'before', // String: Insert the toggle before or after the navigation
+                customToggle: '.nav-toggle'
+            });

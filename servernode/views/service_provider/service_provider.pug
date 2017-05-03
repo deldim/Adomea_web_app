@@ -1,0 +1,113 @@
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='foundation/foundation.min.js')
+        script(src='responsive-nav/responsive-nav.js')
+        script(src='javascripts/jquery.sticky.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='stylesheets/style___.css')
+    body.bids-show
+        .bid-process-container
+            header.row
+                nav.site-nav.large-12.columns
+                    .container
+                        a.site-logo(href='/')
+                            img(style='margin-top:-30px',src='../images/logo.png', alt='logo-uzengo')
+                .bids-secondary-row-container.bids-row
+                    .row
+                        ul.large-12.medium-12.small-12.columns.bids-step-process
+                            li.bids-step-icon.bid-step-icon-date-frequency.bids-step-icon--current
+                                | Vous souhaitez devenir prestataire de services&mldr; Remplissez ce formulaire et nous vous contacterons dans les plus brefs d&eacute;lais.
+            .bids-secondary-row-container.bids-row
+            section
+                div.simple_form.track_cleaner-step-two
+                    .row
+                        div(style='width: 100%')
+                            .bid_process_wrapper.wrapper2
+                                #sticker
+                                    fieldset.bid-process-form.contact_form
+                                        h2.bid-process-form__heading.bid-process-form__heading--border  Formulaire de contact
+                                        .row.bp-confirm-row
+                                            .large-6.medium-6.small-6.columns
+                                                .form-group.string.required.bid_user_firstname
+                                                    label.string.required.control-label Nom de la soci&eacute;t&eacute;*
+                                                    .controls
+                                                        input.string.required.form-control(required='required', type='text', name='firstname')
+                                            .form-group.string.required.bid_user_mobile
+                                                label.string.required.control-label Téléphone*
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+                                        .row.bp-confirm-row
+                                            .large-6.medium-6.small-6.columns
+                                                .form-group.string.required.bid_user_firstname
+                                                    label.string.required.control-label Adresse de la soci&eacute;t&eacute;*
+                                                    .controls
+                                                        input.string.required.form-control(required='required', type='text', name='firstname')
+                                            .form-group.string.required.bid_user_mobile
+                                                label.string.required.control-label Email*
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+                                        .row.bp-confirm-row
+                                            .large-6.medium-6.small-6.columns
+                                                .form-group.string.required.bid_user_firstname
+                                                    label.string.required.control-label URL du site internet
+                                                    .controls
+                                                        input.string.required.form-control(required='required', type='text', name='firstname')
+                                            .form-group.string.required.bid_user_mobile
+                                                label.string.required.control-label Téléphone*
+                                                .controls
+                                                    input.string.required.form-control(required='required', type='text', name='firstname')
+
+                                        .row.bp-confirm-row
+                                            .large-6.medium-6.small-6.columns
+                                                .form-group.email.required.bid_user_email
+                                                    label(style='text-align:left').required.control-label le service que vous proposez*
+                                                    .controls
+                                                        select#bid_number_jean.number_jean(name='number_jean')
+                                                            option(value='0')
+                                                            option(value='1') M&eacute;nage
+                                                            option(value='2') Repassage
+                                                            option(value='3') Garde d&apos;enfants
+
+                                        .row.bp-confirm-row
+                                            .large-6.medium-6.small-6.columns
+                                                .form-group.password.required.bid_user_password
+                                                    label.required.control-label Message
+                                                    .controls
+                                                textarea.message.form-control
+                                                |
+                                                input#button_search_cleaners.bid-process__button.bid-process__button--positive.send(type='submit', name='commit', value='Envoyer')
+                                |
+                                label.ad
+                                    | Les espaces publicitaires co&ucirc;tent chers et n&rsquo;engendrent pas toujours les retomb&eacute;es
+                                    b  escompt&eacute;es
+                                    | . Les clients sont de plus en plus
+                                    b  exigeants
+                                    |  et recherchent une centralisation des services. Uzengo apporte cette solution et vous met en relation avec eux. Par votre
+                                    b  inscription
+                                    | , nous vous mettons au devant de la sc&egrave;ne. Votre soci&eacute;t&eacute; sera assur&eacute;e d&rsquo;une
+                                    b  repr&eacute;sentativit&eacute; continue
+                                    | ,
+                                    b  efficace
+                                    |  et
+                                    b  gratuite
+                                    |  sur tous les r&eacute;seaux. Devenir prestataire, c&rsquo;est assurer aux clients proches de vous, des
+                                    b  services de qualit&eacute;
+                                    | . Uzengo s&rsquo;engage &agrave; ce que chaque prestataire de services r&eacute;ponde de mani&egrave;re optimale aux
+                                    b  besoins des clients
+                                    | . L&rsquo;acc&egrave;s &agrave; Uzengo en tant que prestataire est donc
+                                    b  r&eacute;gi par une charte qualit&eacute;
+                                    | . Pour nous rejoindre, remplissez le
+                                    b  formulaire
+                                    |  et l&rsquo;&eacute;quipe Uzengo vous contactera rapidement pour &eacute;tudier votre profil.
+            script.
+                $(window).load(function () {
+                    $("#sticker").sticky({topSpacing: 50});
+                });
+

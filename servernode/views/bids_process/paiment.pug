@@ -1,0 +1,94 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='../javascripts/bootstrap-timepicker.js')
+        script(src='../javascripts/bootstrap-datepicker.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='../stylesheets/bids_process.css')
+    body
+        .bids-secondary-row-container.bids-row.bids-show
+            header.row
+                nav.site-nav.large-12.columns
+                    ul.bids-nav-list
+                        a(href='/log_out')
+                            a.sign-in.nav-link.chunky-cta(href='/log_out') Se déconnecter
+
+            .row
+                ul.large-12.medium-12.small-12.columns.bids-step-process
+                    li.bids-step-icon.bids-step-icon--complete  1. Votre r&eacute;servation
+                    li.bids-step-rule.bids-step-rule--solid  &nbsp;
+                    li.bids-step-icon.bid-step-icon-your-details.bids-step-icon--complete  2. Vos informations
+                    li.bids-step-rule.bids-step-rule--solid  &nbsp;
+                    li.bids-step-icon.bids-step-icon--current  3. Confirmation de votre r&eacute;servation
+        .row
+            .large-4.medium-4.small-4.columns.pad-r-0
+                #booking_summary_boxes
+                    .booking-summary
+                        .booking-summary__heading  R&eacute;sum&eacute; de votre r&eacute;servation
+                        ul.booking-details
+                            li.booking-details__item
+                                span.booking_detail_name.detail Code postal
+                                |
+                                span.booking_detail_value.value L- #{postcode}
+                            li.booking-details__item
+                                span.booking_detail_name.detail Date
+                                |
+                                span.booking_detail_value.value.bid_date_summary #{date}
+                            li.booking-details__item
+                                span.booking_detail_name.detail Heure
+                                |
+                                span.booking_detail_value.value.bid_time_summary #{time}
+                            li.booking-details__item
+                                span.booking_detail_name.detail Heures r&eacute;serv&eacute;es
+                                |
+                                span.booking_detail_value.value.bid_duration_summary #{duration}
+                            .booking-details-cost
+                                li.booking-details__item
+                                    span.booking_detail_name.detail Co&ucirc;t du m&eacute;nage
+                                    |
+                                    span.booking_detail_value.value.bid_cost_summary #{bid_cost_total}
+                                li.booking-details__item.booking_details_total_cost
+                                    span.booking_detail_name.detail Co&ucirc;t total
+                                    |
+                                    span.booking_detail_value.value.bid_cost_total #{bid_cost_total}
+                                li.booking_details_item
+                                    .real-price
+                                        span.booking_detail_name Apr&egrave;s r&eacute;duction d&rsquo;imp&ocirc;t de 30%
+                                        |
+                                        span.booking_detail_value #{real_price}
+                                li.booking-details__item
+                                |
+                                form#edit_bid_98836.booking-details-cost__promo-form(action='', accept-charset='UTF-8', method='post')
+                                    label.booking_detail_name(for='bid_promo_code') Promo code
+                                    |
+                                    input#bid_promo_code.bid-process__promo-input(type='text', value='', name='bid_promo_code')
+                                    |
+                                    input.bid-process__button--purple.bid-process__button.bid-process__button--small-type.bid-process__button--promo(type='submit', name='commit', value='Appliquer', data-disable-with='En application...')
+                                p.promo_code_message
+            .large-8.medium-8.small-8.columns.pad-l-0
+                fieldset.bid-process-form
+                    h4 Modes de paiement
+                    |
+                    form(action='/bids_process/uzengo_user_order', accept-charset='UTF-8', method='post')
+                        fieldset.bid-process-form
+                            h5 Virement bancaire
+                            .form-group.string.required.bp-confirm-row.field-group.text-row
+                                label.string.required.control-label(for='payment-bank-account-owner') Titulaire du compte
+                                .controls
+                                    input#payment-bank-account-owner.payment__control--input.form-control(type='text', value='', name='ownerName', placeholder='Titulaire du compte', required='')
+                            .form-group.string.required.bp-confirm-row.field-group.text-row
+                                label.string.required.control-label(for='payment-bank-account-iban') IBAN
+                                .controls
+                                    input#payment-bank-account-iban.payment__control--input.form-control(type='text', name='iban', placeholder='IBAN')
+                            .navbar.navbar-default.navbar-fixed-bottom.flow
+                                button#payment-bank-account-submit.payment__form--button Terminez votre r&eacute;servation
+

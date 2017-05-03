@@ -1,0 +1,321 @@
+
+.user-section
+{
+    margin-top: 20px;
+    font-size: 22px;
+    background-image: url(../images/lalux.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.user-section-inner
+{
+    height: 65px;
+    width: 65px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.user-section-inner img
+{
+    margin-left: 10px;
+    width: 55px;
+    height: 60px;
+}
+
+.user-info {
+    display: block;
+    color:#000!important;
+    display: inline-block;
+    padding: 15px;
+    margin-bottom: 0px
+}
+
+.user-text-online
+{
+    font-size: 18px;
+    color: #fff;
+}
+
+.user-circle-online
+{
+    width: 15px!important;
+    height: 15px!important;
+}
+
+/* side-menu section */
+
+.navbar-top-links  .open > a, .nav .open > a:hover, .nav .open > a:focus
+{
+    background-color: #75C5B8;
+}
+
+.navbar-top-links > li > a
+{
+    color: #FFFFFF;
+}
+
+#side-menu
+{
+    background-color: #0c8273;
+}
+
+#side-menu a
+{
+    color: #000;
+    border-bottom: 1px solid #fff !important;
+    height: 55px;
+}
+
+.selected
+{
+    background-color: #0a5a50;
+}
+
+/* back colors */
+
+.blue
+{
+    background-color: rgb(113, 159, 241);
+}
+
+.green
+{
+    background-color: rgb(144, 236, 192);
+}
+
+.red
+{
+    background-color: rgb(255, 102, 133);
+}
+
+.yellow
+{
+    background-color: rgb(237, 253, 46);
+}
+
+/* No border */
+
+.no-boder
+{
+    border: 0px solid #5bc0de !important;
+}
+
+/* tap nvbar Section */
+
+#navbar
+{
+    background-color: rgb(83, 163, 163);
+}
+
+.navbar-brand
+{
+    padding-left: 20px;
+}
+
+.navbar-brand img
+{
+    height: 30px;
+}
+
+.top-label
+{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -24px;
+    margin-right: -24px;
+}
+
+/*large font*/
+
+.large-font
+{
+    font-size: 18px;
+}
+
+.body-Login-back
+{
+    background-color: #84B899;
+}
+
+.margin-tips
+{
+    margin: 5px;
+}
+
+.navbar-default
+{
+    border-color: #27A6BE;
+}
+
+/*media queries*/
+
+@media (min-width:768px)
+{
+    #page-wrapper
+    {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        min-height: 1000px;
+    }
+}
+
+@media (max-width:768px)
+{
+    #wrapper
+    {
+        margin-top: 140px!important;
+    }
+}
+
+.ezfz
+{
+}
+
+.info_alert
+{
+    padding-top: 10%;
+}
+
+.panel
+{
+    margin-top: 100px;
+}
+
+.order
+{
+    max-width: 32%;
+    float: right;
+    background-color: #ffc845;
+}
+
+.order:hover
+{
+    background-color: #535353;
+}
+
+.order:focus
+{
+    background-color: #535353;
+}
+
+.alert
+{
+    background-color: #57882e;
+    color: #ffffff;
+}
+
+.search_bar
+{
+    margin-top: 17%;
+    margin-bottom: 10px;
+}
+
+.bookings
+{
+    margin-top: 5%;
+}
+
+.stylish-input-group .input-group-addon
+{
+    background: white !important;
+}
+
+.stylish-input-group .form-control
+{
+    border-right: 0;
+    box-shadow: 0 0 0;
+    border-color: #ccc;
+}
+
+.stylish-input-group button
+{
+    border: 0;
+    background: transparent;
+}
+
+.prestat
+{
+    margin-right: 1%;
+    margin-left: 1%;
+    float: right;
+    background-color: #ffc845;
+    margin-top: 6%;
+    min-width: 30%;
+}
+
+.prestat:hover
+{
+    background-color: #ffb400;
+}
+
+.prestat:hover
+{
+}
+
+.newcontrat
+{
+    margin-top: 20%;
+}
+
+.virement
+{
+    text-align: center;
+}
+
+.owner_name
+{
+    width: 270px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.owner_last
+{
+    width: 320px;
+    margin-left: 332px;
+    margin-bottom: 20px;
+    margin-top: -75px;
+}
+
+.numer_card
+{
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.payer
+{
+}
+
+.purchase
+{
+    padding: 5px 15px;
+    background: #ffc845;
+    border: 0 none;
+    cursor: pointer;
+    margin-left: 100%;
+    margin-top: 60px;
+    color: #ffffff;
+    height: 40px;
+    text-align: center;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    margin-top: 55px!important;
+    background-color: #0c8273;
+}
+
+.center{
+    margin-left: 25%;
+}

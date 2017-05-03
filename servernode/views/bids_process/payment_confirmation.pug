@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='../javascripts/bootstrap-timepicker.js')
+        script(src='../javascripts/bootstrap-datepicker.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='../stylesheets/bids_process.css')
+    body
+        .bids-secondary-row-container.bids-row.bids-show
+            header.row
+                nav.site-nav.large-12.columns
+                    ul.bids-nav-list
+                        a(href='')
+                        |
+                        a.sign-in.nav-link.chunky-cta(href='/log_out') Se d&eacute;connecter
+            .row
+                ul.large-12.medium-12.small-12.columns.bids-step-process
+                    li.bids-step-icon.bids-step-icon--complete  1. Votre r&eacute;servation
+                    li.bids-step-rule.bids-step-rule--solid  &nbsp;
+                    li.bids-step-icon.bid-step-icon-your-details.bids-step-icon--complete  2. Vos informations
+                    li.bids-step-rule.bids-step-rule--solid  &nbsp;
+                    li.bids-step-icon.bids-step-icon--current  3. Confirmation de votre r&eacute;servation
+        .row
+            .large-8.medium-8.small-8.columns.pad-l-0
+                fieldset.bid-cormation-form
+                    h4 Confirmation de paiement
+                    p  Votre paiement a &eacute;t&eacute; enregistr&eacute; avec suc&eacute;e
+
+

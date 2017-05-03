@@ -1,0 +1,82 @@
+extends heads/head
+
+block content
+
+  body.index-index.splash.splash-video.full-width
+    header.header-main.header-main--light
+      nav.site-nav.reversed
+        .container
+          a.site-logo(href='#')
+            img(src='images/logo.png', alt='logo-uzengo')
+          a.nav-toggle.nav-toggle--dark(href='/', style='fill:;', aria-hidden='true') Menu
+          nav.nav.nav--main.nav-collapse
+            ul
+
+              li
+                span.link_to_another_page
+                a.nav__link(href='/particulier') Particulier
+              li
+                span.link_to_another_page
+                a.nav__link(href='/b2b') Professionel
+              li
+              li
+                span.link_to_another_page
+                a.nav__link(href='/service_provider') Devenir Prestataire
+              li
+                a.nav__link.sign-in(href='/user_dashboard/sign_in') Se connecter
+              li
+                span.link_to_another_page
+                a.nav__link(href='faqs') Aide
+              li
+                .nav__link.nav__trust-item
+    section#main-teaser.teaser
+      .hv-video-container
+        video#hv-video.hv-video(loop='loop', autoplay='')
+          source(src='marketing/video-intro.mp4', type='video/mp4')
+      .main-teaser-content
+        .teaser-content
+          h1 Réservez votre Prestation de Service à Domicile
+          p
+          .signup.inline-submit
+            form#new_bid1.new_bid(action='/bids', accept-charset='UTF-8', method='post')
+              .row
+                input#bid_postcode1.postcode(required='required', placeholder='Votre code postal', type='text', name='postcode')
+                input.btn-primary.signup__button(type='submit', name='commit', value='Chercher')
+            if errors
+              ul
+                for error in errors
+                  li(style='color:red')!= error.msg
+    section#trustandsecurity-teaser.teaser
+      div
+        h3 La qualité comme seul mot d'ordre
+        .service
+          i.icon-trust-connect
+          p Connectez-vous
+        .service
+          i.icon-trust-online
+          p Réserver votre créneau
+        .service
+          i.icon-trust-zuver
+          p Des prestataires  qualifiés et expérimentés
+        .service
+          i.icon-trust-bezah
+          p Paiement en ligne sécurisé
+        .service
+          i.icon-trust-garantie
+          p Satisfaction garantie
+
+    footer.new-footer.footer.full-width.small-text-center
+      section.footer-section
+        .text-s.row
+          .footer__copyright.large-6.large-centered.columns
+            | Tous droits réservés.  
+            a.link--positive(href='/lalux') Accés Lalux
+            |  | © 2017   Uzengo
+  script.
+    var nav = responsiveNav('.nav-collapse', { // Selector
+      animate: true, // Boolean: Use CSS3 transitions, true or false
+      transition: 284, // Integer: Speed of the transition, in milliseconds
+      label: 'Menu', // String: Label for the navigation toggle
+      insert: 'before', // String: Insert the toggle before or after the navigation
+      customToggle: '.nav-toggle'
+    });

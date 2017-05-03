@@ -1,0 +1,45 @@
+{
+  "name": "uzengo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "node server for the business uzego",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "build_css": "node-sass public/stylesheets -o public/stylesheets"
+  },
+  "keywords": [
+    "node",
+    "uzengo",
+    "cordova",
+    "ajax",
+    "pugJS",
+    "ExpressJS",
+    "SASS",
+    "Sequelize",
+    "Docker"
+  ],
+  "author": "IMIHY Abdel LOSSON Alexis UNG Henry",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.5",
+    "asyncawait": "^1.0.6",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "cookie-session": "^2.0.0-alpha.3",
+    "debug": "~2.2.0",
+    "express": "^4.14.0",
+    "express-session": "^1.15.1",
+    "express-validator": "^3.1.2",
+    "helmet": "^3.4.0",
+    "moment": "^2.17.1",
+    "morgan": "~1.7.0",
+    "mysql": "^2.13.0",
+    "node-sass-middleware": "0.8.0",
+    "paypal-rest-sdk": "^1.7.1",
+    "pug": "~2.0.0-beta7",
+    "sequelize": "^3.30.2",
+    "serve-favicon": "~2.3.0"
+  }
+}

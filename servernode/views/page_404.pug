@@ -1,0 +1,67 @@
+extends heads/head
+
+block content
+    body.index-index.splash.splash-video.full-width
+        header.header-main.header-main--light
+            nav.site-nav.reversed
+                .container
+                    a.site-logo(href='/')
+                        img(alt='logo-uzengo', src='../images/logo.png')
+                    |
+                    a.nav-toggle.nav-toggle--dark(aria-hidden='true', href='#', style='fill:;') Menu
+                    nav.nav.nav--main.nav-collapse
+                        ul
+                            li
+                            li
+                                span.link_to_another_page
+                                    a.nav__link(style='color:#57882e', href='faqs') Aide
+                            li
+                            li
+                                a.nav__link.sign-in(style='color:#57882e', href='sign_in') Se connecter
+                            li
+                                span.link_to_another_page
+                                    a.nav__link(style='color:#57882e', href='uzengo_pro') Uzengo Pro
+                            li
+                                .nav__link.nav__trust-item
+        section#main-teaser.teaser
+            .hv-video-container
+                img(alt='logo-uzengo', src='../images/page_404.png')
+            .main-teaser-content
+                .teaser-content
+                    h1(style='color:black')
+                        | Oups! Vous vous &ecirc;tes perdus
+                        br
+                        |  404 page introuvable
+                    .signup.inline-submit
+                        form#new_bid.new_bid(accept-charset='UTF-8', action='/bids', method='post', name='new_bid')
+                            .row
+                                a.btn-primary.signup__button(href='/') Page d&apos;accueil
+        footer.new-footer.footer.full-width.small-text-center
+            section.footer-section
+                .text-s.row
+                    .footer__copyright.large-6.large-centered.columns
+                        | Tous droits r&eacute;serv&eacute;s. &nbsp;
+                        a.link--positive(href='/mentions-legales') Mentions l&eacute;gales
+                        | &nbsp;| &copy; 2017 &nbsp; Uzengo
+
+
+
+
+
+
+
+
+
+
+
+
+
+        script.
+            var nav = responsiveNav('.nav-collapse', { // Selector
+                animate: true, // Boolean: Use CSS3 transitions, true or false
+                transition: 284, // Integer: Speed of the transition, in milliseconds
+                label: 'Menu', // String: Label for the navigation toggle
+                insert: 'before', // String: Insert the toggle before or after the navigation
+                customToggle: '.nav-toggle'
+            });
+

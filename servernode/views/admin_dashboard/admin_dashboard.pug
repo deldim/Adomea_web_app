@@ -1,0 +1,79 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(href='stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='stylesheets/style__.css', rel='stylesheet')
+        link(href='stylesheets/style_dashboard.css', rel='stylesheet')
+    body
+    #wrapper
+        nav.navbar-default.navbar-static-side(role='navigation')
+            .sidebar-collapse
+                ul#side-menu.nav
+                    li
+                        .user-section
+                            .user-section-inner
+                                img(src='../images/logo-white.png',href='/', alt='')
+                            .user-info
+                                div
+                                    | #{user_name}
+                                .user-text-online
+                                    br
+                    li.sidebar-search
+                    li
+                        a(href='index.html')
+                            i.fa.fa-dashboard.fa-fw
+                            |  Dashboard
+                    li.selected
+                        a(href='')
+                            i.fa.fa-user.fa-fw
+                            |  R&eacute;servations
+                    li
+                        a(href='')
+                            i.fa.fa-bullseye.fa-fw
+                            |  Prestataires
+                    li
+                        a(href='')
+                            i.fa.fa-edit.fa-fw
+                            |  Factures
+                    li
+                        a(href='/log_out')
+                            i.fa.fa-power-off.fa-fw
+                            |  Se d&eacute;connecter
+        #page-wrapper
+            .panel.panel-default
+            .input-group.stylish-input-group.search_bar
+                input.form-control(type='text', placeholder='Search')
+                |
+                span.input-group-addon
+                    button(type='submit')
+                        span.fa.fa-search.fa-fw
+            table.table.bookings
+                thead
+                    tr
+                        th Pr&eacute;nom
+                        th Nom
+                        th Adresse
+                        th Email
+                        th Date et heure
+                        th Heures r&eacute;serv&eacute;es
+                        th Service
+                tbody
+                    each itemlist in list
+                        tr
+                        each item in itemlist
+                            td #{item}
+            div
+                row
+                |
+                button.btn.btn-primary.btn-lg.prestat(type='button') Ajouter un prestataire
+                |
+                button.btn.btn-primary.btn-lg.prestat(type='button') Ajouter un prestataire
+                |
+                button.btn.btn-primary.btn-lg.prestat(type='button') Ajouter un prestataire
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')

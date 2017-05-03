@@ -1,0 +1,121 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+        title #{title}
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300italic,300')
+        link(rel='stylesheet', media='screen', href='https://fonts.googleapis.com/css?family=Lato:400,700,300')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='../foundation/foundation.min.js')
+        script(src='../responsive-nav/responsive-nav.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js')
+        link(rel='stylesheet', media='screen', href='../stylesheets/style___.css')
+    body.bids-show
+        .bid-process-container
+            header.row
+                nav.site-nav.large-12.columns
+                    ul.bids-nav-list
+                        li
+                            a(href='/user_dashboard/sign_in')
+                            |
+                            a.sign-in.nav-link.chunky-cta(href='/user_dashboard/sign_in') Se connecter
+                    .container
+                        a.site-logo(href='/')
+                            img(style='margin-top:-30px',src='../images/logo.png', alt='logo-uzengo')
+            .bids-secondary-row-container.bids-row
+                .row
+                    ul.large-12.medium-12.small-12.columns.bids-step-process
+                        li.bids-step-icon.bid-step-icon-date-frequency.bids-step-icon--current  Vous avez choisi une prestation de repassage. Deux formules s&rsquo;offrent &agrave; vous
+            section
+                form.simple_form.track_cleaner-step-two(action='/bids_process/selection', accept-charset='UTF-8', method='post')
+                    .row
+                        div(style='width: 100%')
+                            .bid_process_wrapper
+                                .bid_process_question.bid_process_duration
+                                    .bid_process_question.bid_process_duration(style='height:400px')
+                                        h2.bid_process_question_title Choisissez votre formule
+                                        .bid_process_question_inputs
+                                        |
+                                        label(style='margin-left: 15%')
+                                            input#choice1(type='radio', name='cleaning', value='small')
+                                            |
+                                            img.cleanning(src='../images/repassage_classique.png')
+                                        |
+                                        label(style='margin-left: 15%')
+                                            input#choice2(type='radio', name='cleaning', value='small')
+                                            |
+                                            img.ironning_pack(src='../images/repassage_collecte.png')
+                                fieldset.bid-process-form
+                                    h2.bid-process-form__heading.bid-process-form__heading--border  Informations compl&eacute;mentaires
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.string.required.bid_user_firstname
+                                                label.string.required.control-label Nombre de jeans / pantalons&nbsp;
+                                                .controls
+                                                    select.number_jean(name='number_jean')
+                                                        option(value='1') 1
+                                                        option(value='2') 2
+                                                        option(value='3') 3
+                                                        option(value='4') 4
+                                                        option(value='5') 5
+                                                        option(value='6') 6
+                                                        option(value='7') 7
+                                                        option(value='8') 8
+                                                        option(value='9') 9
+                                                        option(value='10') 10
+                                        .form-group.string.required.bid_user_mobile.hidden#subs
+                                            label.string.required.control-label Lieu de la collecte
+                                            .controls
+                                                input.string.required.form-control(type='text', name='collec_adress')
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.email.required.bid_user_email
+                                                label.required.control-label Nombre de tee-shirts / gilets
+                                                .controls
+                                                    select.number_jean(name='number_jean')
+                                                        option(value='1') 1
+                                                        option(value='2') 2
+                                                        option(value='3') 3
+                                                        option(value='4') 4
+                                                        option(value='5') 5
+                                                        option(value='6') 6
+                                                        option(value='7') 7
+                                                        option(value='8') 8
+                                                        option(value='9') 9
+                                                        option(value='10') 10
+                                            .js-email-suggestion
+                                        .large-6.medium-6.small-6.columns
+                                    .row.bp-confirm-row
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.password.required.bid_user_password
+                                                label.required.control-label Nombre de chemises
+                                                .controls
+                                                    select#bid_number_jean.number_jean(name='number_jean')
+                                                        option(value='1') 1
+                                                        option(value='2') 2
+                                                        option(value='3') 3
+                                                        option(value='4') 4
+                                                        option(value='5') 5
+                                                        option(value='6') 6
+                                                        option(value='7') 7
+                                                        option(value='8') 8
+                                                        option(value='9') 9
+                                                        option(value='10') 10
+                                        .large-6.medium-6.small-6.columns
+                                            .form-group.password.required.bid_user_password_confirmation
+                                                .controls
+                                .bid_process_submit
+                                    input#button_search_cleaners.bid-process__button.bid-process__button--positive(type='submit', name='commit', value='Étape suivante', disable_with='Recherche, veuillez patienter ...')
+            script(type='text/javascript').
+                $(document).ready(function () {
+                    $('#choice2').change(function () {
+                        $('#subs').removeClass('hidden');
+                        return false;
+                    });
+                    $('#choice1').change(function () {
+                        $('#subs').addClass('hidden');
+                        return false;
+                    });
+                });
